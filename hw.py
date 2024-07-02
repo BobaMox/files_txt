@@ -1,4 +1,5 @@
 from pprint import pprint
+
 dict_txt = {}
 count_lines_1 = 0
 count_lines_2 = 0
@@ -28,5 +29,9 @@ with open('files/3.txt') as f_3:
 
 pprint(dict_txt)
 
-with open('4.txt', 'w') as f_4:
-    f_4.write(f'{dict_txt}\n')
+# with open('4.txt', 'w') as f_4:
+#     f_4.write(f'{dict_txt}\n')
+
+with open('4.txt', 'w', encoding='utf-8') as f_4:
+    for name_file, desc in dict_txt.items():
+        f_4.write(f'{name_file}\n{desc[0]}\n{desc[1]}\n')
